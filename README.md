@@ -48,7 +48,9 @@ together with the plugin.
 
 ## Installing and using it
 
-1. Put `MarkerTest-<version>.jar` into `%APPDATA%\Hytale\UserData\Mods`.
+1. Download `MarkerTest-<version>.jar` from the
+   [latest release](https://github.com/densnz/hytale-marker-test/releases/latest)
+   (or [build it yourself](#building-from-source)) and put it into `%APPDATA%\Hytale\UserData\Mods`.
 2. Create a **new test world** and enable *MarkerTest* in that world's mod list.
    Do not test in a world you care about.
 3. Check the world switches:
@@ -302,6 +304,19 @@ The target game version is set in `gradle.properties` (`hytale_version`, `manife
 The template's `./gradlew runServer` task can start a local server with the plugin (it may ask you
 to authorize the server on first start).
 
+### Publishing a release
+
+Releases are built by GitHub Actions (`.github/workflows/release.yml`). Set `version` in
+`gradle.properties`, commit, then push a tag with the same version:
+
+```bash
+git tag v0.2.0
+git push origin v0.2.0
+```
+
+The workflow builds the project and creates a GitHub release for the tag with
+`MarkerTest-<version>.jar` attached. It stops with an error if the tag does not match `version`.
+
 ---
 
 ## Project layout
@@ -320,6 +335,7 @@ to authorize the server on first start).
 │   ├── manifest.json           Generated/updated by the build from gradle.properties
 │   └── Server/NPC/Spawn/Markers/MT_*.json
 ├── .github/workflows/gradle.yml  CI: checks that the project compiles
+├── .github/workflows/release.yml Builds the jar and publishes a release for v* tags
 └── LICENSE
 ```
 
