@@ -1,0 +1,9 @@
+{
+  "Model": "NPC_Spawn_Marker",
+  "NPCs": [
+    { "Name": "Archaeopteryx", "Weight": 100, "RealtimeRespawnTime": 3 }
+  ],
+  "RealtimeRespawn": true,
+  "ManualTrigger": true,
+  "ExclusionRadius": 0
+}

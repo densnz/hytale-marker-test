@@ -1,0 +1,25 @@
+{
+    "Group": "MarkerTest",
+    "Name": "MarkerTest",
+    "Version": "0.2.0",
+    "Description": "Test bench for Hytale spawn markers with debug commands",
+    "Authors": [
+        {
+            "Name": "densnz"
+        }
+    ],
+    "Website": "",
+    "DisabledByDefault": false,
+    "IncludesAssetPack": true,
+    "Dependencies": {
+        "Hytale:AssetModule": "*"
+    },
+    "OptionalDependencies": {
+        
+    },
+    "ServerVersion": ">=0.7.5 <0.8.0",
+    "Main": "dev.markertest.MarkerTestPlugin",
+    "UpdateChecker": {
+        "CurseForge": ""
+    }
+}

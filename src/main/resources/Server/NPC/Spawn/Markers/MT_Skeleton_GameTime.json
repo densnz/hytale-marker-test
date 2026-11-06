@@ -1,0 +1,8 @@
+{
+  "Model": "NPC_Spawn_Marker",
+  "NPCs": [
+    { "Name": "Skeleton_Burnt_Soldier_Wander", "Weight": 100, "SpawnAfterGameTime": "PT1H" }
+  ],
+  "ExclusionRadius": 0,
+  "MaxDropHeight": 4
+}
