@@ -275,7 +275,7 @@ entity is created. This shape is taken from the server's codec. It has not been 
 | `Count` | Max number of markers to trigger |
 
 Attached to a block or item interaction (for example opening a container), this is a natural fit
-for "the chest turns into a mimic when opened". Not tested in game yet.
+for "an NPC appears when the player opens a container". Not tested in game yet.
 
 ### Pitfalls
 
@@ -284,8 +284,9 @@ for "the chest turns into a mimic when opened". Not tested in game yet.
 - Every entry needs the delay that matches `RealtimeRespawn`.
 - A role name that does not exist makes the spawn fail with `NONEXISTENT_ROLE`.
 - NPCs spawned by markers get their model scaled like any other NPC. A model with a scale other than
-  `1` combined with a non-zero particle `PositionOffset` was the cause of the
-  `PositionOffset ... is not finite` disconnects fixed in MimicTale 1.6.9; markers do not change that.
+  `1` combined with a non-zero particle `PositionOffset` can grow the offset until it overflows, and
+  the server then disconnects the player with `PositionOffset ... is not finite`. Markers do not
+  change that, so keep particle offsets at zero on scaled models.
 
 ---
 
